@@ -1,5 +1,8 @@
 :root {
     --background-color: #385F71;
+    --black-shodow-in-background: rgb(0, 0, 0, 0.5);
+    --black-shodow-in-footer: rgb(0, 0, 0, 0.4);
+    --font-color: #fff;
 }
 
 * {
@@ -31,20 +34,22 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-   background: rgb(0, 0, 0,0.5);
+    background: var(--black-shodow-in-background);
 }
 
 .logo {
     font-size: 1.7rem;
     padding-left: 1.2rem;
     user-select: none;
-    color: #fff;
+    color: var(--font-color);
 }
 
-
+.navigation {
+    user-select: none;
+}
 
 .navigation a {
-    color: #fff;
+    color: var(--font-color);
     position: relative;
     font-size: 1.2rem;
     font-weight: 500;
@@ -52,13 +57,14 @@ header {
     margin-left: 40px;
     position: relative;
     margin-right: 50px;
+    user-select: none;
 }
 
 .navigation a::after {
 
     content: '';
     position: absolute;
-    background: #fff;
+    background: var(--font-color);
     height: 3px;
     width: 100%;
     left: 0;
@@ -79,18 +85,20 @@ header {
     width: 130px;
     height: 45px;
     border-radius: 5px;
-    border: 2px solid #fff;
+    border: 2px solid var(--font-color);
     cursor: pointer;
     background: transparent;
     font-size: 1.1rem;
     margin-left: 40px;
-    color: #fff;
-    transition: 0.4s;
+    color: var(--font-color);
+    transition: 0.5s;
 }
 
 .navigation .btn:hover {
-    background: #fff;
-    color: #162938;
+    background: var(--font-color);
+    /* color: #162938; */
+    color: var(--background-color);
+
 
 }
 
@@ -104,28 +112,29 @@ main {
     height: 100vh;
     align-items: center;
     padding: 80px 100px 0;
-    background-color: rgb(0, 0, 0,0.5);
+    background-color: var(--black-shodow-in-background);
     gap: 2rem;
 }
 
 main .intro {
     max-width: 600px;
-    color: #fff;
+    color: var(--font-color);
     margin-top: -80px;
 
 }
 
 main .intro h2 {
     font-size: 2.9rem;
-    color: #fff;
+    color: var(--font-color);
     font-weight: 500;
     margin-bottom: 40px;
+
 
 }
 
 main .intro p {
     margin: 10px 0 40px;
-    color: #fff;
+    color: var(--font-color);
     font-size: 1.2rem;
     font-weight: 400;
     word-spacing: 4px;
@@ -141,145 +150,154 @@ main .intro .started {
     font-weight: 1.2rem;
     margin-left: 30px;
     background: transparent;
-    color: #fff;
-    border: 2px solid #fff;
-
+    color: var(--font-color);
+    border: 2px solid var(--font-color);
+    user-select: none;
+    transition: 0.5s;
 }
 
 main .intro .started:hover {
-    background: #fff;
+    background: var(--font-color);
     color: var(--background-color);
+    cursor: pointer;
 }
 
 
 /* log in part */
 
-.log-in{
+.log-in {
     position: relative;
     width: 440px;
     margin-top: -120px;
 }
 
-.log-in h2{
-    color: #fff;
+.log-in h2 {
+    color: var(--font-color);
     text-align: center;
     font-size: 1.8rem;
 }
 
-.log-in .input-box{
+.log-in .input-box {
     position: relative;
     width: 100%;
     height: 50px;
     margin: 40px 0;
 }
 
-.log-in .input-box input{
+.log-in .input-box input {
     width: 100%;
     height: 100%;
     background: transparent;
     border-radius: 40px;
-    border: 2px solid #fff;
+    border: 2px solid var(--font-color);
     text-align: center;
-    color: #fff;
+    color: var(--font-color);
     font-size: 1.2rem;
     outline: none;
 }
 
 .log-in .input-box input:focus~label,
-.log-in .input-box input:valid~label{
+.log-in .input-box input:valid~label {
     top: -14px;
     left: 17px;
 }
-.log-in .input-box label{
+
+.log-in .input-box label {
     position: absolute;
-    color: #fff;
+    color: var(--font-color);
     font-size: 1.2rem;
     pointer-events: none;
     top: 50%;
     left: 45px;
     transform: translateY(-50%);
     transition: 0.5s;
+    user-select: none;
 }
 
-.log-in .icon{
+.log-in .icon {
     position: absolute;
     top: 18px;
     left: 15px;
-    color: #fff;
+    color: var(--font-color);
 }
 
-.log-in .remember-forget{
+.log-in .remember-forget {
     justify-content: space-between;
-    color: #fff;
+    color: var(--font-color);
     display: flex;
     margin: -25px 0 15px;
     font-size: 1.1rem;
     margin-top: 10px;
 }
 
-.remember-forget label input{
+.log-in .remember-forget label {
+    cursor: pointer;
+    user-select: none;
+}
+
+.remember-forget label input {
     margin-right: 10px;
+
 }
 
-.log-in .remember-forget a{
+.log-in .remember-forget a {
     text-decoration: none;
-    color: #fff;
+    color: var(--font-color);
+    user-select: none;
 }
 
-.log-in .remember-forget a:hover{
+.log-in .remember-forget a:hover {
     text-decoration: underline;
+
 }
 
-.log-in .Login-btn{
+.log-in .Login-btn {
     width: 100%;
     height: 50px;
     border-radius: 40px;
     background: transparent;
-    color: #fff;
+    color: var(--font-color);
     font-size: 1.4rem;
-    box-shadow: rgb(0, 0, 0,0.5);
+    box-shadow: var(--black-shodow-in-background);
     cursor: pointer;
-    transition: .5s;
+    transition: .9s;
     margin-top: 10px;
+    user-select: none;
 }
 
-.log-in .Login-btn:hover{
-    background: #fff;
+.log-in .Login-btn:hover {
+    background: var(--font-color);
     color: var(--background-color);
 }
 
 
-.log-in .register-link{
+.log-in .register-link {
     text-align: center;
     margin: 30px;
-    color: #fff;
+    color: var(--font-color);
     font-size: 1.1rem;
     font-weight: 500;
 }
 
-.log-in .register-link p a{
+.log-in .register-link p a {
     text-decoration: none;
-    color: #fff;
+    color: var(--font-color);
     margin-left: 10px;
+    user-select: none;
 }
 
-.log-in .register-link p a:hover{
+.log-in .register-link p a:hover {
     text-decoration: underline;
 }
 
 /* footer */
 
 footer {
-    
+
     width: 100%;
     background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
     padding: 1.3rem;
-     background: rgb(0, 0, 0,0.4);
+    background: var(--black-shodow-in-footer);
 }
 
 footer .display-all {
@@ -305,7 +323,7 @@ footer .display-all {
 
 .footer__for-flex a {
     text-decoration: none;
-    color: #fff;
+    color: var(--font-color);
     font-weight: bolder;
 }
 
@@ -315,5 +333,5 @@ footer .develop-mehedi {
     display: flex;
     flex-direction: column;
     gap: .4rem;
-    color: #fff;
+    color: var(--font-color);
 }
