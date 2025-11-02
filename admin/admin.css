@@ -1,0 +1,145 @@
+:root {
+    --background-color: #385F71;
+    --black-shodow-in-background: rgb(0, 0, 0, 0.5);
+    --black-shodow-in-footer: rgb(0, 0, 0, 0.4);
+    --font-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/background.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+
+header {
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 80px;
+    width: 100%;
+    padding: 20px 50px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--black-shodow-in-background);
+}
+
+.logo {
+    font-size: 1.7rem;
+    padding-left: 1.2rem;
+    user-select: none;
+    color: var(--font-color);
+}
+
+.navigation {
+    user-select: none;
+}
+
+.navigation a {
+    color: var(--font-color);
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    position: relative;
+    margin-right: 50px;
+    user-select: none;
+}
+
+.navigation a::after {
+
+    content: '';
+    position: absolute;
+    background: var(--font-color);
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: -6px;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .5s;
+
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+
+/* main */
+
+main {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    padding: 80px 100px 0;
+    background-color: var(--black-shodow-in-background);
+    gap: 2rem;
+}
+
+
+/* footer */
+
+footer {
+
+    width: 100%;
+    background-color: transparent;
+    padding: 1.3rem;
+    background: var(--black-shodow-in-footer);
+}
+
+footer .display-all {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 15rem;
+}
+
+.footer__for-flex {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    font-size: 1.rem;
+}
+
+.footer__for-flex h4 {
+    font-weight: 900;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: rgb(12, 255, 255);
+}
+
+.footer__for-flex a {
+    text-decoration: none;
+    color: var(--font-color);
+    font-weight: bolder;
+}
+
+footer .develop-mehedi {
+    font-size: 1.2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    color: var(--font-color);
+}
