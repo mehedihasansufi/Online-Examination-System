@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="keywords" content="Online Examination ">
     <meta name="author" content="Mehedi Hasan">
     <meta name="description" content="It will be helpfull your Examination">
-    <title>Online Examination System</title>
+    <title>Sign-Up</title>
 
     <!-- fowt awesome cdn -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="sign-up.css">
 </head>
-
 <body>
-    <header>
+       <header>
         <h2 class="logo">Logo</h2>
         <nav class="navigation">
 
@@ -29,10 +27,13 @@
 
 
             <button class="btn">Login</button>
+           
 
         </nav>
     </header>
-    <main>
+
+
+     <main>
         <div class="intro">
             <h2>Coffee Build Your Career</h2>
             <p>
@@ -43,9 +44,14 @@
         </div>
 
         <div class="log-in">
-            <h2>Member Login</h2>
+               <h2>Sign Up</h2>
 
             <form action="">
+                <div class="input-box">
+                    
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Enter Your Name</label>
+                </div>
                 <div class="input-box">
                     <span class="icon"><i class="fa-solid fa-envelope"></i></span>
                     <input type="email" id="email" name="email" required>
@@ -58,13 +64,9 @@
                     <label for="password">Enter your password</label>
                 </div>
 
-                <div class="remember-forget">
-                    <label><input type="checkbox">Remember me</label>
-                    <a href="">Forget password</a>
-                </div>
-                <button type="submit" class="Login-btn">Login</button>
+                <button type="submit" class="Login-btn">Register</button>
                 <div class="register-link">
-                    <p>Not a Member? <a href="./sign-up/sign-up.html">Sign-up now</a></p>
+                    <p>Are you a Member? <a href="../index.html">Log-in</a></p>
                 </div>
             </form>
 
@@ -72,6 +74,7 @@
 
     </main>
 
+    
     <footer>
 
         <div class="display-all">
@@ -113,5 +116,4 @@
         </div>
     </footer>
 </body>
-
 </html>
