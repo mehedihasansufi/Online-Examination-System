@@ -1,6 +1,7 @@
 :root {
     --background-color: #385F71;
     --black-shodow-in-background: rgb(0, 0, 0, 0.7);
+    --black-shodow-in-card-background: rgb(0, 0, 0, 0.5);
     --black-shodow-in-footer: rgb(0, 0, 0, 0.6);
     --font-color: #fff;
 }
@@ -91,77 +92,73 @@ main {
     background-color: var(--black-shodow-in-background);
 }
 
-.dash-board {
+.exam-section {
+    flex: 1;
+    padding: 30px 50px;
+    background: var(--black-shodow-in-card-background);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     color: var(--font-color);
-    text-align: left;
-    font-size: 2.2rem;
-    margin-top: 20px;
+}
+
+.exam-section h2 {
+    text-align: center;
+    font-size: 2rem;
     margin-bottom: 20px;
-    margin-left: 40px;
 }
 
-.container {
+.exam-form {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 18px;
 }
 
-.first-box {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 2.3rem;
-}
-
-.second-box {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 2.3rem;
-}
-
-
-.box {
+.question-card {
+    padding: 16px 20px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, rgba(0,255,150,0.06), rgba(0,100,255,0.04));
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     display: flex;
     flex-direction: column;
-    font-size: 1.2rem;
-    gap: 1rem;
-    color: var(--font-color);
-    width: 250px;
-    height: 150px;
-    border: 1px solid green;
-    justify-content: center;
+    gap: 8px;
+}
+
+.question-card p {
+    font-weight: 600;
+}
+
+.question-card label {
+    display: flex;
     align-items: center;
-    border-radius: 10px;
-    background: 
-        linear-gradient(to right, rgba(0, 255, 0, 0.3), rgba(0, 0, 255, 0.3)),
-        linear-gradient(to bottom, #385F71, #000);
-    background-blend-mode: overlay; 
-    transition: all 0.3s ease;
-    /* box-shadow: 0 4px 15px rgba(0, 255, 0, 0.3); */
+    gap: 8px;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: background 0.3s;
 }
 
-.box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 255, 0, 0.5);
+.question-card label:hover {
+    background: rgba(255,255,255,0.05);
 }
 
-/* 
-.total-exam {
-    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
-    border: 1px solid red;
+.submit-btn {
+    width: 200px;
+    align-self: center;
+    padding: 12px;
+    border-radius: 40px;
+    border: none;
+    background: linear-gradient(90deg, #00e79f, #006cff);
+    color: #012;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,108,255,0.3);
+    transition: 0.3s;
 }
 
-.total-exam:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5);
-} */
-
-
-
-
-.create-exam a{
-
-    text-decoration: none;
-    color: var(--font-color);
+.submit-btn:hover {
+    transform: translateY(2px);
 }
 
 

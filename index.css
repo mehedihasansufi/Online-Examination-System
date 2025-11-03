@@ -92,6 +92,7 @@ header {
     margin-left: 40px;
     color: var(--font-color);
     transition: 0.5s;
+    display: none;
 }
 
 .navigation .btn:hover {
@@ -176,6 +177,43 @@ main .intro .started:hover {
     text-align: center;
     font-size: 1.8rem;
 }
+
+/* it only show for demo because we don't use javascript  start*/
+
+.user-register{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 2.2rem;
+   color: var(--font-color);
+    width: 100%;
+    margin-bottom: -30px;
+    margin-left: -20px;
+    user-select: none;
+}
+
+.user-register a{
+    text-decoration: none;
+    color: var(--font-color);
+    margin-left: 20px;
+    margin-right: -10px;
+    font-size: 1.2rem;
+    color: red;
+}
+
+.user-register a:hover{
+    text-decoration: underline;
+}
+
+
+.user-register select option {
+    padding: 18px;
+    height: 30px; 
+    font-size: 14px;
+    
+}
+
+/* end */
 
 .log-in .input-box {
     position: relative;

@@ -1,7 +1,7 @@
 :root {
     --background-color: #385F71;
-    --black-shodow-in-background: rgb(0, 0, 0, 0.5);
-    --black-shodow-in-footer: rgb(0, 0, 0, 0.4);
+    --black-shodow-in-background: rgb(0, 0, 0, 0.7);
+    --black-shodow-in-footer: rgb(0, 0, 0, 0.6);
     --font-color: #fff;
 }
 
@@ -113,55 +113,168 @@ main {
     height: 100vh;
     align-items: center;
     padding: 80px 100px 0;
-    background-color: var(--black-shodow-in-background);
+   color: var(--font-color);
     gap: 2rem;
 }
-
-main .intro {
-    max-width: 600px;
-    color: var(--font-color);
-    margin-top: -80px;
-
+.main-dashboard {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 80px);
+    padding: 20px 50px;
+    gap: 24px;
+    background: var(--black-shodow-in-background);
+    color:var(--font-color);
 }
 
-main .intro h2 {
-    font-size: 2.9rem;
-    color: var(--font-color);
-    font-weight: 500;
-    margin-bottom: 40px;
-
-
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-main .intro p {
-    margin: 10px 0 40px;
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
     color: var(--font-color);
-    font-size: 1.2rem;
-    font-weight: 400;
-    word-spacing: 4px;
-    line-height: 1.6rem;
-    text-align: justify;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
 }
 
-main .intro .started {
-
-    width: 130px;
-    height: 50px;
-    border-radius: 20px;
-    font-weight: 1.2rem;
-    margin-left: 30px;
-    background: transparent;
-    color: var(--font-color);
-    border: 2px solid var(--font-color);
-    user-select: none;
-    transition: 0.5s;
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: linear-gradient(90deg, rgba(0,255,150,0.06), rgba(0,100,255,0.04));
 }
 
-main .intro .started:hover {
-    background: var(--font-color);
-    color: var(--background-color);
+/* Content */
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    color: var(--font-color);
+}
+
+/* Overview Cards */
+.overview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.card {
+    background: linear-gradient(90deg, rgba(0,255,150,0.12), rgba(0,100,255,0.12));
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 8px 28px rgba(2,6,23,0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stat-title {
+    color: var(--font-color);
+}
+
+.stat-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-top: 8px;
+}
+
+/* Panels */
+.panel {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+}
+
+.panel-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.panel-head h3 {
+    font-size: 1.05rem;
+}
+
+.panel-head .see-all {
+    font-size: 0.95rem;
+    color: var(--font-color);
+    text-decoration: none;
+}
+
+.panel-head .see-all:hover{
+    text-decoration: underline;
+}
+
+/* Exam Cards */
+.exam-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.exam-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(0,255,150,0.06), rgba(0,100,255,0.05));
+    padding: 12px;
+    border-radius: 10px;
+    height: 100px;
+}
+
+.exam-card h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.exam-card .sub {
+    font-size: 0.85rem;
+    color: var(--font-color);
+    margin-top: .8rem;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
     cursor: pointer;
+    font-weight: 700;
 }
+
+.start {
+    background: linear-gradient(90deg, #00e79f, #006cff);
+    color: #012;
+}
+
+.start.muted {
+    opacity: 0.75;
+    cursor: not-allowed;
+    background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+}
+
+/* Notifications */
+.notifications {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: rgba(255,255,255,0.65);
+    font-size: 0.95rem;
+}
+
 
 
 /* log in part */
@@ -178,27 +291,42 @@ main .intro .started:hover {
     font-size: 1.8rem;
 }
 
+/* it only show for demo because we don't use javascript  start*/
 
 .user-register{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     height: 2.2rem;
-    font-size: 2.9rem;
+   color: var(--font-color);
     width: 100%;
     margin-bottom: -30px;
     margin-left: -20px;
     user-select: none;
 }
 
+.user-register a{
+    text-decoration: none;
+    color: var(--font-color);
+    margin-left: 20px;
+    margin-right: -10px;
+    font-size: 1.2rem;
+    color: red;
+}
+
+.user-register a:hover{
+    text-decoration: underline;
+}
+
 
 .user-register select option {
     padding: 18px;
-    height: 30px;  /* may not work in all browsers */
+    height: 30px; 
     font-size: 14px;
     
 }
 
+/* end */
 
 .log-in .input-box {
     position: relative;
@@ -244,7 +372,35 @@ main .intro .started:hover {
     color: var(--font-color);
 }
 
+.log-in .remember-forget {
+    justify-content: space-between;
+    color: var(--font-color);
+    display: flex;
+    margin: -25px 0 15px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
 
+.log-in .remember-forget label {
+    cursor: pointer;
+    user-select: none;
+}
+
+.remember-forget label input {
+    margin-right: 10px;
+
+}
+
+.log-in .remember-forget a {
+    text-decoration: none;
+    color: var(--font-color);
+    user-select: none;
+}
+
+.log-in .remember-forget a:hover {
+    text-decoration: underline;
+
+}
 
 .log-in .Login-btn {
     width: 100%;
@@ -256,6 +412,7 @@ main .intro .started:hover {
     box-shadow: var(--black-shodow-in-background);
     cursor: pointer;
     transition: .9s;
+    margin-top: 10px;
     user-select: none;
 }
 
@@ -267,7 +424,7 @@ main .intro .started:hover {
 
 .log-in .register-link {
     text-align: center;
-   margin-top: 1.1rem;
+    margin: 30px;
     color: var(--font-color);
     font-size: 1.1rem;
     font-weight: 500;
@@ -278,7 +435,6 @@ main .intro .started:hover {
     color: var(--font-color);
     margin-left: 10px;
     user-select: none;
-   
 }
 
 .log-in .register-link p a:hover {
