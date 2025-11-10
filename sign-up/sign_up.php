@@ -13,10 +13,10 @@ $password = $_POST['password'];
 // Decide table and redirect page
 if($user == "student"){
     $table = "student_table";
-    $redirect_page = "../Student/student.html";
+    $redirect_page = "../index.html";
 } else {
     $table = "teacher_table";
-    $redirect_page = "../admin/admin.html";
+    $redirect_page = "../index.html";
 }
 
 // Check if email already exists

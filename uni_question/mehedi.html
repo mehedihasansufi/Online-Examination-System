@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Multiple Questions</title>
+    <link rel="stylesheet" href="mehedi.css">
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">Logo</h2>
+        <nav class="navigation">
+
+            <!-- <a href="">Home</a> -->
+            <a href="">About</a>
+            <a href="">Service</a>
+            <a href="">Contract</a>
+
+<!-- 
+            <button class="btn">Login</button> -->
+
+        </nav>
+    </header>
+    <main>
+
+        <h2 >Add Multiple Questions</h2>
+
+        <form id="questionForm" action="mehedi.php" method="POST">
+            <label>Exam Name:</label>
+            <input type="text" name="exam_name" required>
+
+            <div id="questionsContainer">
+                <!-- Dynamic questions will be added here -->
+            </div>
+
+            <button type="button" id="addQuestionBtn">Add Question</button>
+            <button type="submit">Submit All Questions</button>
+        </form>
+
+    </main>
+     <footer>
+
+        <div class="display-all">
+            <div class="main footer__for-flex">
+                <h4>Main</h4>
+                <a href="">Home</a>
+                <a href="">Contact</a>
+                <a href="">Work With Us</a>
+                <a href="">My Gear</a>
+            </div>
+
+            <div class="learn footer__for-flex">
+                <h4>Learn</h4>
+                <a href="">Courses</a>
+                <a href="">Tutorials</a>
+                <a href="">Notes</a>
+            </div>
+
+            <div class="legal footer__for-flex">
+                <h4>Legal</h4>
+                <a href="">Terms</a>
+                <a href="">Privacy</a>
+                <a href="">Refund</a>
+            </div>
+
+            <div class="footer__follow footer__for-flex">
+                <h4>Follow Us</h4>
+                <a href="https://github.com/mehedihasansufi" target="_blank"><i class="fa-brands fa-github"></i>
+                    Github</a>
+                <a href="https://www.facebook.com/sazzad.shahriar.66"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                <a href=""><i class="fa-brands fa-x-twitter"></i> Twitter</a>
+            </div>
+        </div>
+
+        <div class="develop-mehedi">
+            <p>Develop &hearts; with </p>
+            <p>copyright &copy; 2025</p>
+            <p>Developed by Mehedi Hasan | Sazzad shahriar</p>
+        </div>
+    </footer>
+    <script src="mehedi.js"></script>
+</body>
+
+</html>
