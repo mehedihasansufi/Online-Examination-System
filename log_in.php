@@ -1,7 +1,8 @@
 <?php
+session_start(); // শুরুতেই session start করতে হবে
+
 // 1. Database connect
 $connection = mysqli_connect("localhost:3307", "root", "", "online_examination");
-
 if (!$connection) {
     die("Database not connected: " . mysqli_connect_error());
 }
@@ -23,11 +24,19 @@ if ($user == "student") {
 }
 
 // 4. Check email and password
-$sql = "SELECT * FROM $table WHERE email='$email' AND password='$password'";
-$result = mysqli_query($connection, $sql);
+$sql = "SELECT * FROM $table WHERE email=? AND password=?";
+$stmt = mysqli_prepare($connection, $sql);
+mysqli_stmt_bind_param($stmt, "ss", $email, $password);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
-if (mysqli_num_rows($result) > 0) {
-    // Login successful → redirect
+if ($row = mysqli_fetch_assoc($result)) {
+    // Login successful → set session variables
+    $_SESSION['user_type'] = $user;
+    $_SESSION['user_name'] = $row['name'] ?? $row['email']; // name না থাকলে email রাখবে
+    $_SESSION['user_email'] = $row['email'];
+
+    // Redirect to dashboard
     header("Location: $redirect_page");
     exit();
 } else {

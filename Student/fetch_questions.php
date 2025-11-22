@@ -1,17 +1,9 @@
 <?php
-header('Content-Type: application/json'); // header আগে
-
-$connection = mysqli_connect("localhost:3307", "root", "", "online_examination"); 
-if(!$connection){
-    echo json_encode([]); // DB fail হলে empty array return
-    exit;
-}
+$connection = mysqli_connect("localhost:3307", "root", "", "online_examination");
+if(!$connection){ die("DB connection failed: ".mysqli_connect_error()); }
 
 $exam = $_GET['exam_name'] ?? '';
-if(!$exam){
-    echo json_encode([]);
-    exit;
-}
+if(!$exam){ echo json_encode([]); exit; }
 
 $sql = "SELECT id, question_text, option1, option2, option3, option4 FROM questions WHERE exam_name=?";
 $stmt = mysqli_prepare($connection, $sql);
@@ -24,7 +16,6 @@ while($row = mysqli_fetch_assoc($result)){
     $questions[] = $row;
 }
 
-echo json_encode($questions); // শুধুমাত্র JSON return
-
-$connection->close();
+header('Content-Type: application/json');
+echo json_encode($questions);
 ?>
