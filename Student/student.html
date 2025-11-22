@@ -139,38 +139,36 @@
             <p>Developed by Mehedi Hasan | Sazzad shahriar</p>
         </div>
 
-        
-      <script>
-    // শুধু exam name লোড করবে
-    fetch("fetch_exams.php")
-        .then(response => response.json())
-        .then(data => {
-            const examList = document.querySelector(".exam-list");
-            examList.innerHTML = ""; // আগের static data মুছে ফেলো
 
-            if (data.length === 0) {
-                examList.innerHTML = "<p>No upcoming exams found.</p>";
-            } else {
-                data.forEach(exam => {
-                    const examCard = document.createElement("div");
-                    examCard.classList.add("exam-card");
+<script>
+fetch("fetch_exams.php")
+    .then(res => res.json())
+    .then(data => {
+        const examList = document.querySelector(".exam-list");
+        examList.innerHTML = "";
 
-                    examCard.innerHTML = `
-                        <div>
-                            <h4>${exam.exam_name}</h4>
-                        </div>
-                        <div class="exam-actions">
-                            <button class="btn start">Start</button>
-                        </div>
-                    `;
-                    examList.appendChild(examCard);
-                });
-            }
-        })
-        .catch(error => {
-            console.error("Error loading exams:", error);
+        data.forEach(exam => {
+            const card = document.createElement("div");
+            card.classList.add("exam-card");
+            card.innerHTML = `
+                <h4>${exam.exam_name}</h4>
+                <button class="btn start" data-exam="${exam.exam_name}">Start</button>
+            `;
+            examList.appendChild(card);
         });
+
+        // Start button click handler
+        document.querySelectorAll('.btn.start').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const exam = btn.getAttribute('data-exam');
+                // Send correct query string for exam.html
+                window.location.href = `../exam/exam.html?exam_name=${encodeURIComponent(exam)}`;
+            });
+        });
+    })
+    .catch(err => console.error("Error loading exams:", err));
 </script>
+
 
  
     </footer>

@@ -14,7 +14,7 @@ $exams = [];
 if ($result && mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         $exams[] = $row;
-    }
+}
 }
 
 echo json_encode($exams);

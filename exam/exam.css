@@ -1,0 +1,195 @@
+:root {
+    --background-color: #385F71;
+    --black-shadow-in-background: rgba(0, 0, 0, 0.5);
+    --black-shadow-in-footer: rgba(0, 0, 0, 0.4);
+    --font-color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: url(../images/background.jpg) no-repeat center center / cover;
+    color: var(--font-color);
+}
+
+/* header */
+header {
+    width: 100%;
+    height: 80px;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--black-shadow-in-background);
+}
+
+.logo {
+    font-size: 1.7rem;
+    user-select: none;
+    color: var(--font-color);
+}
+
+.navigation a {
+    color: var(--font-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    background: var(--font-color);
+    height: 3px;
+    width: 100%;
+    left: 0;
+    bottom: -6px;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+
+.navigation a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navigation .btn {
+    width: 130px;
+    height: 45px;
+    border-radius: 5px;
+    border: 2px solid var(--font-color);
+    background: transparent;
+    font-size: 1.1rem;
+    color: var(--font-color);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.navigation .btn:hover {
+    background: var(--font-color);
+    color: var(--background-color);
+}
+
+/* main */
+main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background: var(--black-shadow-in-background);
+}
+
+#exam-title {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#questions-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.question-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--background-color);
+}
+
+.question-card p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.question-card label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+button.btn {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: 2px solid var(--font-color);
+    background: transparent;
+    color: var(--font-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button.btn:hover {
+    background: var(--font-color);
+    color: var(--background-color);
+}
+
+/* footer */
+footer {
+    width: 100%;
+    background: var(--black-shadow-in-footer);
+    padding: 1.3rem;
+}
+
+footer .display-all {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.footer__for-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer__for-flex h4 {
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: rgb(12, 255, 255);
+}
+
+.footer__for-flex a {
+    text-decoration: none;
+    color: var(--font-color);
+    font-weight: bolder;
+}
+
+footer .develop-mehedi {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--font-color);
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+    }
+
+    #questions-container {
+        width: 100%;
+    }
+
+    .navigation a {
+        margin: 0 10px;
+    }
+}
