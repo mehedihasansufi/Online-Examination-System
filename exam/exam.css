@@ -75,6 +75,7 @@ header {
     color: var(--font-color);
     cursor: pointer;
     transition: 0.5s;
+    display: none;
 }
 
 .navigation .btn:hover {

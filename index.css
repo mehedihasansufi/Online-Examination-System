@@ -37,12 +37,7 @@ header {
     background: var(--black-shodow-in-background);
 }
 
-.logo {
-    font-size: 1.7rem;
-    padding-left: 1.2rem;
-    user-select: none;
-    color: var(--font-color);
-}
+
 
 .navigation {
     user-select: none;
