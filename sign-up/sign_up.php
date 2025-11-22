@@ -1,5 +1,5 @@
 <?php
-$connection = mysqli_connect("localhost", "root", "", "online_examination");
+$connection = mysqli_connect("localhost:3307", "root", "", "online_examination");
 
 if (mysqli_connect_errno()) {
     die("Database not connected: " . mysqli_connect_error());

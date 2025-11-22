@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Database connection
-$connection = mysqli_connect("localhost", "root", "", "online_examination");
+$connection = mysqli_connect("localhost:3307", "root", "", "online_examination");
 
 if (!$connection) {
     die("Database Connection Failed: " . mysqli_connect_error());

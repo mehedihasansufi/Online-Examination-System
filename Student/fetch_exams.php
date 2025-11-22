@@ -1,5 +1,5 @@
 <?php
-$connection = mysqli_connect("localhost", "root", "", "online_examination");
+$connection = mysqli_connect("localhost:3307", "root", "", "online_examination");
 
 if (!$connection) {
     die(json_encode(["error" => "Database connection failed."]));
