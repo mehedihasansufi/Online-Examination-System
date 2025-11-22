@@ -138,6 +138,41 @@
             <p>copyright &copy; 2025</p>
             <p>Developed by Mehedi Hasan | Sazzad shahriar</p>
         </div>
+
+        
+      <script>
+    // শুধু exam name লোড করবে
+    fetch("fetch_exams.php")
+        .then(response => response.json())
+        .then(data => {
+            const examList = document.querySelector(".exam-list");
+            examList.innerHTML = ""; // আগের static data মুছে ফেলো
+
+            if (data.length === 0) {
+                examList.innerHTML = "<p>No upcoming exams found.</p>";
+            } else {
+                data.forEach(exam => {
+                    const examCard = document.createElement("div");
+                    examCard.classList.add("exam-card");
+
+                    examCard.innerHTML = `
+                        <div>
+                            <h4>${exam.exam_name}</h4>
+                        </div>
+                        <div class="exam-actions">
+                            <button class="btn start">Start</button>
+                        </div>
+                    `;
+                    examList.appendChild(examCard);
+                });
+            }
+        })
+        .catch(error => {
+            console.error("Error loading exams:", error);
+        });
+</script>
+
+ 
     </footer>
 </body>
 
